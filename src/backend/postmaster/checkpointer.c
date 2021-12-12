@@ -207,6 +207,7 @@ CheckpointerMain(void)
 	 */
 	pqsignal(SIGCHLD, SIG_DFL);
 
+
 	/*
 	 * Initialize so that first time-driven event happens at the correct time.
 	 */
@@ -259,6 +260,7 @@ CheckpointerMain(void)
 		 * files.
 		 */
 		LWLockReleaseAll();
+		CustomErrorCleanup();
 		ConditionVariableCancelSleep();
 		pgstat_report_wait_end();
 		AbortBufferIO();
