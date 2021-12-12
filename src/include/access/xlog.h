@@ -52,6 +52,7 @@ extern bool log_checkpoints;
 extern bool track_wal_io_timing;
 
 extern int	CheckPointSegments;
+extern CommitSeqNo startupCommitSeqNo;
 
 /* Archive modes */
 typedef enum ArchiveMode
