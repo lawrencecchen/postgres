@@ -3084,6 +3084,9 @@ get_rte_attribute_name(RangeTblEntry *rte, AttrNumber attnum)
 	if (attnum == InvalidAttrNumber)
 		return "*";
 
+	if (attnum == RowIdAttributeNumber)
+		return "rowid";
+
 	/*
 	 * If there is a user-written column alias, use it.
 	 */
